@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="629.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SettingsController">
+   <children>
+      <HBox alignment="CENTER" layoutX="174.0" layoutY="252.0" prefHeight="707.0" prefWidth="640.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox prefHeight="575.0" prefWidth="315.0" spacing="10.0">
+               <children>
+                  <Label fx:id="diseaseLabel" text="Disease">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <HBox prefHeight="25.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <Label fx:id="diseaseNameLbl" text="Name:" />
+                        <TextField fx:id="diseaseNameTf" prefHeight="25.0" prefWidth="190.0" />
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </HBox>
+                  <HBox prefHeight="25.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <Label fx:id="infectiousnessLbl" text="Infectiousness:" />
+                        <Slider fx:id="infectiousnessSlider" blockIncrement="0.1" majorTickUnit="0.5" max="1.0" minorTickCount="4" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="25.0" prefWidth="322.0" spacing="10.0">
+                     <children>
+                        <Button fx:id="saveDiseaseBtn" mnemonicParsing="false" onAction="#createDisease" prefHeight="25.0" prefWidth="103.0" text="Save Disease" />
+                        <Button fx:id="editDBtn" mnemonicParsing="false" onAction="#editDisease" prefHeight="25.0" prefWidth="108.0" text="Edit Disease" />
+                        <Button fx:id="deleteDiseaseBtn" mnemonicParsing="false" onAction="#deleteDisease" prefHeight="25.0" prefWidth="106.0" text="Delete Disease" />
+                     </children>
+                  </HBox>
+                  <TableView fx:id="diseaseTable" prefHeight="247.0" prefWidth="300.0">
+                     <columns>
+                        <TableColumn fx:id="diseaseNameCol" prefWidth="150.0" text="Name" />
+                        <TableColumn fx:id="infectiousnessCol" prefWidth="150.0" text="Infectiousness" />
+                     </columns>
+                  </TableView>
+                  <Separator prefWidth="200.0" />
+                  <Label fx:id="popTraitsLbl" prefHeight="17.0" prefWidth="78.0" text="Population">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <HBox prefHeight="25.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <Label fx:id="turnIntLbl" text="Turn Interval:" />
+                        <Slider fx:id="turnIntervalSlider" blockIncrement="0.5" majorTickUnit="5.0" max="10.0" minorTickCount="9" prefHeight="38.0" prefWidth="186.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="25.0" prefWidth="196.0" spacing="13.5">
+                     <children>
+                        <Label fx:id="TIVarLbl" text="T.I Variation:" />
+                        <Slider fx:id="TIVarSlider" blockIncrement="0.1" majorTickUnit="0.5" max="1.0" minorTickCount="4" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="22.0" prefWidth="245.0" spacing="16.5">
+                     <children>
+                        <Label fx:id="normRadLbl" text="Normal Radius:" />
+                        <Slider fx:id="normRadSlider" blockIncrement="1.0" majorTickUnit="10.0" max="10.0" minorTickCount="9" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="25.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <Label fx:id="infRadLbl" text="Infection Radius:" />
+                        <Slider fx:id="infRadSlider" majorTickUnit="10.0" max="30.0" minorTickCount="9" prefHeight="38.0" prefWidth="169.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="9.0" prefWidth="301.0" spacing="15.0">
+                     <children>
+                        <Button fx:id="setPopBtn" mnemonicParsing="false" onAction="#setPopulationTraits" text="Set Population Traits" />
+                        <Button fx:id="editPopBtn" mnemonicParsing="false" onAction="#editPopSettings" text="Edit" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </VBox>
+            <Separator orientation="VERTICAL" prefHeight="200.0" />
+            <VBox prefHeight="614.0" prefWidth="298.0" spacing="10.0">
+               <children>
+                  <Label fx:id="simLbl" text="Simulation">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <HBox alignment="CENTER_LEFT" prefHeight="22.0" prefWidth="245.0" spacing="10.0">
+                     <children>
+                        <Label fx:id="popSizeLbl" text="Population Size:" />
+                        <Spinner fx:id="pop_sizeSpinner" editable="true" onKeyReleased="#checkValidPop" prefHeight="25.0" prefWidth="128.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="22.0" prefWidth="245.0" spacing="10.0">
+                     <children>
+                        <Label fx:id="iniInfLbl" text="Initial Infected:" />
+                        <Spinner fx:id="in_sizeSpinner" editable="true" onKeyReleased="#checkValidInf" prefHeight="25.0" prefWidth="135.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="24.0" prefWidth="245.0" spacing="10.0">
+                     <children>
+                        <Label fx:id="diseaseLbl" text="Disease:" />
+                        <ComboBox fx:id="diseaseCombo" prefHeight="25.0" prefWidth="170.0" promptText="(Pick a Disease)" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="22.0" prefWidth="245.0" spacing="10.0">
+                     <children>
+                        <Label fx:id="speedOfSimLbl" text="Speed of Simulation:" />
+                        <HBox prefHeight="25.0" prefWidth="116.0">
+                           <children>
+                              <ToggleButton fx:id="halfSpeed" mnemonicParsing="false" text="0.5x">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="toggleSpeed" />
+                                 </toggleGroup>
+                              </ToggleButton>
+                              <ToggleButton fx:id="regularSpeed" mnemonicParsing="false" text="1.0x" toggleGroup="$toggleSpeed" />
+                              <ToggleButton fx:id="doubleSpeed" mnemonicParsing="false" text="2.0x" toggleGroup="$toggleSpeed" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="22.0" prefWidth="245.0" spacing="10.0">
+                     <children>
+                        <Label fx:id="intRemLbl" text="Interval Removed:" />
+                        <Slider fx:id="intRemSlider" blockIncrement="1.0" majorTickUnit="5.0" max="25.0" min="10.0" minorTickCount="4" prefHeight="38.0" prefWidth="134.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="22.0" prefWidth="245.0" spacing="37.0">
+                     <children>
+                        <Label fx:id="varLbl" text="  |   Variation:" />
+                        <Slider fx:id="intRemVarSlider" blockIncrement="1.0" majorTickUnit="2.0" max="10.0" min="2.0" minorTickCount="1" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+                     </children>
+                  </HBox>
+                  <Separator prefWidth="200.0" />
+                  <RadioButton fx:id="centralRadio" mnemonicParsing="false" onAction="#centralDisable" text="Central Spot" />
+                  <HBox alignment="CENTER_LEFT" prefHeight="22.0" prefWidth="245.0" spacing="10.0">
+                     <children>
+                        <Label fx:id="maxPplLbl" text="Max People Per Time:" />
+                        <Spinner fx:id="maxPplSpinner" editable="true" onKeyReleased="#checkValidMaxPep" prefHeight="25.0" prefWidth="51.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="22.0" prefWidth="245.0" spacing="10.0">
+                     <children>
+                        <Label fx:id="travelTimeLbl" text="Travel Time:" />
+                        <Slider fx:id="travelTimeSlider" blockIncrement="0.5" majorTickUnit="0.2" max="1.5" min="0.1" minorTickCount="1" prefHeight="38.0" prefWidth="145.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="22.0" prefWidth="245.0" spacing="10.0">
+                     <children>
+                        <Label fx:id="calledLbl" text="Called Every ? :" />
+                        <Slider fx:id="oneEverySlider" blockIncrement="0.5" majorTickUnit="1.0" max="10.0" min="1.0" minorTickCount="1" prefHeight="38.0" prefWidth="182.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="22.0" prefWidth="245.0" spacing="10.0">
+                     <children>
+                        <Label fx:id="probCentralLbl" text="Probability of Visiting:" />
+                        <Slider fx:id="probVisitSlider" blockIncrement="0.1" majorTickUnit="0.5" max="1.0" minorTickCount="4" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+                     </children>
+                  </HBox>
+                  <Separator prefWidth="200.0" />
+                  <RadioButton fx:id="quaRad" mnemonicParsing="false" onAction="#quarantineDisable" text="Quarantine" />
+                  <HBox prefHeight="22.0" prefWidth="245.0" spacing="10.0">
+                     <children>
+                        <Label fx:id="quaTimeLbl" text="Time before Quarantine:" />
+                        <Slider fx:id="timeB4QuaSlider" blockIncrement="1.0" majorTickUnit="4.0" max="8.0" prefHeight="38.0" prefWidth="110.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+                     </children>
+                  </HBox>
+                  <Separator prefWidth="200.0" />
+                  <HBox prefHeight="18.0" prefWidth="284.0" spacing="15.0">
+                     <children>
+                        <Button fx:id="setSimBtn" mnemonicParsing="false" onAction="#setSimulationProperties" text="Set Simulation Properties" />
+                        <Button fx:id="editSimBtn" mnemonicParsing="false" onAction="#editSimSettings" text="Edit" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets right="10.0" top="5.0" />
+               </padding>
+            </VBox>
+         </children>
+         <padding>
+            <Insets left="10.0" top="10.0" />
+         </padding>
+      </HBox>
+   </children>
+</AnchorPane>

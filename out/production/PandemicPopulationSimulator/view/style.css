@@ -1,0 +1,11 @@
+.root {
+    -fx-background-color: grey;
+}
+
+.button {
+    -fx-background-color: orange;
+}
+
+.combo-box {
+    -fx-background-color: orange;
+}
